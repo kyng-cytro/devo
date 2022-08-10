@@ -33,23 +33,24 @@ const getIsNightMode = () => {
  * @returns {String} - the version number of the extension to version the state.
  */
 const getVersion = () => {
-  const defaultValue = 'default-version';
-  if (typeof chrome === 'undefined' && typeof browser === 'undefined') {
-    return defaultValue;
-  }
+  const defaultValue = 'default-version3';
+  return defaultValue;
+  // if (typeof chrome === 'undefined' && typeof browser === 'undefined') {
+  //   return defaultValue;
+  // }
 
-  /* global chrome, browser */
-  const browserInstance = chrome || browser;
-  if (('getManifest' in browserInstance.runtime)) {
-    return defaultValue;
-  }
+  // /* global chrome, browser */
+  // const browserInstance = chrome || browser;
+  // if (('getManifest' in browserInstance.runtime)) {
+  //   return defaultValue;
+  // }
 
-  if (typeof browserInstance.runtime.getManifest !== 'function') {
-    return defaultValue;
-  }
+  // if (typeof browserInstance.runtime.getManifest !== 'function') {
+  //   return defaultValue;
+  // }
 
-  const manifest = browserInstance.runtime.getManifest();
-  return 'version' in manifest ? manifest.version : defaultValue;
+  // const manifest = browserInstance.runtime.getManifest();
+  // return 'version' in manifest ? manifest.version : defaultValue;
 };
 
 
@@ -94,6 +95,12 @@ export default new Vuex.Store({
       updated_at: 0,
       cache: 5 * 60000,
       data: [],
+    },
+    nextepisode: {
+      updated_at: 0,
+      cache: 5 * 60000,
+      data: [],
+      responseDataKey: 'series',
     },
   },
   mutations: {

@@ -115,6 +115,23 @@ export default {
         loadingColor: 'ec8f8f',
       },
     },
+    nextepisode: {
+      dataUrl: 'http://127.0.0.1:8000/api/shows/',
+      title: 'Next Episode',
+      icon: ['fas', 'film'],
+      titleFontColor: 'ffffff',
+      titleBackgroundColor: '1C6593',
+      loadingColor: '1C6593',
+
+      externalLink: 'https://next-episode.net/calendar/',
+      bodyComponentName: 'NextEpisodeBody',
+
+      nightMode: {
+        titleBackgroundColor: DEFAULT_NIGHTMODE_BACKGROUND,
+        titleFontColor: '1C6593',
+        loadingColor: '1C6593',
+      },
+    },
   },
   layouts: [
     {
